@@ -16,12 +16,6 @@ const Category = () => {
     ? allProducts 
     : allProducts.filter(p => p.category === selectedCategory);
 
-  const sortedProducts = [...displayProducts].sort((a, b) => {
-    if (sortBy === 'price-low') return a.price - b.price;
-    if (sortBy === 'price-high') return b.price - a.price;
-    return a.name.localeCompare(b.name);
-  });
-
   const handleProductClick = (product) => {
     navigate(`/details/${product.id}`);
   };
