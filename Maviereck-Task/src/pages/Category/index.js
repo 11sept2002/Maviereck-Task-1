@@ -6,7 +6,6 @@ import { useShoppingContext } from '../../context/ShoppingContext';
 
 const Category = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('name');
   const navigate = useNavigate();
   const { addToCart, addToWishlist, isInWishlist } = useShoppingContext();
 
