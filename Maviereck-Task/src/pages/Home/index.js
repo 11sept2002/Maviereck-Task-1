@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import laptop from '../../images/lap 1.jpg';
 import BannerImage from '../../images/Banner.jpg';
@@ -12,11 +13,13 @@ const Banner = () => {
 };
 
 const ShopByCategory = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="shop-by-category">
       <h2 className="shop-by-category-title">Shop By Category</h2>
       <div className="category-grid">
-        <div className="category-item" style={{ cursor: 'pointer' }} onClick={() => window.location.href='/shop-by-category'}>
+        <div className="category-item" style={{ cursor: 'pointer' }} onClick={() => navigate('/shop-by-category')}>
           <img src={laptop} alt="Category" style={{ objectFit: 'contain' }}/>
           <p>Laptop Category</p>
         </div>
