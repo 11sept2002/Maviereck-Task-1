@@ -119,7 +119,7 @@ const Category = () => {
         <div className="category-section">
           <h2 className="category-name">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h2>
           <div className="products-grid">
-            {sortedProducts.map(product => (
+            {displayProducts.map(product => (
               <div 
                 key={product.id} 
                 className="product-card"
