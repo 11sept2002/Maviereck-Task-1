@@ -16,10 +16,6 @@ function Whishlist() {
     alert(`${product.name} added to cart!`);
   };
 
-  const handleShare = (product) => {
-    alert(`Sharing ${product.name}...`);
-  };
-
   const handleViewDetails = (productId) => {
     navigate(`/details/${productId}`);
   };
