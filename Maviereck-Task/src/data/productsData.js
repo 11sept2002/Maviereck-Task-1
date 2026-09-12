@@ -1,0 +1,201 @@
+import acerLaptop from '../images/acer-lap.jpg';
+import dellLaptop from '../images/dell-lap.jpg';
+import hpLaptop from '../images/hp-lap.jpg';
+
+export const PRODUCTS_DATABASE = [  
+  {
+    id: 1,
+    name: 'Acer Laptop 1',
+    price: 799.99,
+    originalPrice: 999.99,
+    discount: 20,
+    image: acerLaptop,
+    description: 'High-performance laptop with latest processors',
+    rating: 4,
+    reviews: 128,
+    category: 'acer',
+    specs: {
+      processor: 'Intel Core i5-11400H',
+      ram: '8GB DDR4',
+      storage: '256GB SSD',
+      display: '15.6" FHD',
+      battery: '6 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: 'Acer Laptop 2',
+    price: 899.99,
+    originalPrice: 1199.99,
+    discount: 25,
+    image: acerLaptop,
+    description: 'Ultrabook design with premium build quality',
+    rating: 5,
+    reviews: 234,
+    category: 'acer',
+    specs: {
+      processor: 'Intel Core i7-11800H',
+      ram: '16GB DDR4',
+      storage: '512GB SSD',
+      display: '14" OLED',
+      battery: '10 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: 'Acer Laptop 3',
+    price: 999.99,
+    originalPrice: 1399.99,
+    discount: 28,
+    image: acerLaptop,
+    description: 'Gaming laptop with RTX graphics',
+    rating: 4,
+    reviews: 156,
+    category: 'acer',
+    specs: {
+      processor: 'Intel Core i9-11900H',
+      ram: '32GB DDR4',
+      storage: '1TB SSD',
+      display: '17.3" 144Hz',
+      battery: '5 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: 'Dell Laptop 1',
+    price: 649.99,
+    originalPrice: 899.99,
+    discount: 27,
+    image: dellLaptop,
+    description: 'Budget-friendly with reliable performance',
+    rating: 4,
+    reviews: 89,
+    category: 'dell',
+    specs: {
+      processor: 'Intel Core i3-11100H',
+      ram: '4GB DDR4',
+      storage: '128GB SSD',
+      display: '15.6" TN',
+      battery: '4 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: 'Dell Laptop 2',
+    price: 749.99,
+    originalPrice: 1099.99,
+    discount: 31,
+    image: dellLaptop,
+    description: 'Business laptop for professionals',
+    rating: 5,
+    reviews: 312,
+    category: 'dell',
+    specs: {
+      processor: 'Intel Core i5-11400H',
+      ram: '16GB DDR4',
+      storage: '512GB SSD',
+      display: '13.3" FHD',
+      battery: '12 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: 'Dell Laptop 3',
+    price: 1099.99,
+    originalPrice: 1599.99,
+    discount: 31,
+    image: dellLaptop,
+    description: 'Premium model with top-tier specs',
+    rating: 5,
+    reviews: 445,
+    category: 'dell',
+    specs: {
+      processor: 'Intel Core i7-11700HK',
+      ram: '32GB DDR4',
+      storage: '1TB SSD',
+      display: '15.6" 4K',
+      battery: '8 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: 'HP Laptop 1',
+    price: 699.99,
+    originalPrice: 949.99,
+    discount: 26,
+    image: hpLaptop,
+    description: 'Reliable performer for everyday use',
+    rating: 4,
+    reviews: 167,
+    category: 'hp',
+    specs: {
+      processor: 'AMD Ryzen 5 5500U',
+      ram: '8GB DDR4',
+      storage: '256GB SSD',
+      display: '15.6" FHD',
+      battery: '7 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: 'HP Laptop 2',
+    price: 799.99,
+    originalPrice: 1199.99,
+    discount: 33,
+    image: hpLaptop,
+    description: 'Portable design with excellent performance',
+    rating: 5,
+    reviews: 298,
+    category: 'hp',
+    specs: {
+      processor: 'AMD Ryzen 7 5700U',
+      ram: '16GB DDR4',
+      storage: '512GB SSD',
+      display: '14" FHD',
+      battery: '11 hours',
+    },
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: 'HP Laptop 3',
+    price: 1199.99,
+    originalPrice: 1699.99,
+    discount: 29,
+    image: hpLaptop,
+    description: 'Flagship model with cutting-edge technology',
+    rating: 5,
+    reviews: 523,
+    category: 'hp',
+    specs: {
+      processor: 'AMD Ryzen 9 5900HX',
+      ram: '32GB DDR4',
+      storage: '1TB SSD',
+      display: '15.6" QHD',
+      battery: '10 hours',
+    },
+    inStock: true,
+  },
+];
+
+export const getProductById = (id) => {
+  return PRODUCTS_DATABASE.find(product => product.id === parseInt(id));
+};
+
+export const getProductsByCategory = (category) => {
+  if (category === 'all') {
+    return PRODUCTS_DATABASE;
+  }
+  return PRODUCTS_DATABASE.filter(product => product.category === category);
+};
+
+export const getAllProducts = () => {
+  return PRODUCTS_DATABASE;
+};
